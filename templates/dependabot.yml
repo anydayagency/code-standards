@@ -9,6 +9,14 @@ updates:
       time: "06:00"
       timezone: America/Toronto
     open-pull-requests-limit: 5
+    # Majors that code-standards does not support yet. Remove a line when code-standards is upgraded.
+    ignore:
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      - dependency-name: eslint
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node" # matches .nvmrc (Node 22)
+        update-types: ["version-update:semver-major"]
     commit-message:
       prefix: chore
       include: scope
